@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
+  <implementationId>aws-lambda-auto-impl</implementationId>
+  <implementationVersion>1.0.0</implementationVersion>
+  <definitionId>aws-lambda-auto</definitionId>
+  <definitionVersion>1.0.0</definitionVersion>
+  <implementationClassname>org.bonitasoft.connector.AwsLambdaAutoImpl</implementationClassname>
+  <description>Call an automatically managed Lambda Function</description>
+  <jarDependencies>
+    <jarDependency>aws-java-sdk-core-1.11.389.jar</jarDependency>
+    <jarDependency>aws-java-sdk-lambda-1.11.389.jar</jarDependency>
+    <jarDependency>commons-codec-1.10.jar</jarDependency>
+    <jarDependency>commons-logging-1.1.3.jar</jarDependency>
+    <jarDependency>httpclient-4.5.5.jar</jarDependency>
+    <jarDependency>httpcore-4.4.9.jar</jarDependency>
+    <jarDependency>ion-java-1.0.2.jar</jarDependency>
+    <jarDependency>jackson-annotations-2.6.0.jar</jarDependency>
+    <jarDependency>jackson-core-2.6.7.jar</jarDependency>
+    <jarDependency>jackson-databind-2.6.7.1.jar</jarDependency>
+    <jarDependency>jackson-dataformat-cbor-2.6.7.jar</jarDependency>
+    <jarDependency>jmespath-java-1.11.389.jar</jarDependency>
+    <jarDependency>joda-time-2.8.1.jar</jarDependency>
+  </jarDependencies>
+</implementation:connectorImplementation>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1">
+  <id>aws-lambda-auto</id>
+  <version>1.0.0</version>
+  <icon>e307a1f39537bf408a805bf49921fe19-png.png</icon>
+  <category icon="-LXw464x_400x400.jpg" id="serverless"/>
+  <input mandatory="true" name="region" type="java.lang.String"/>
+  <input name="accessKeyId" type="java.lang.String"/>
+  <input name="secretAccessKey" type="java.lang.String"/>
+  <input defaultValue="" name="sdkClientExecutionTimeout" type="java.lang.Integer"/>
+  <input mandatory="true" name="functionName" type="java.lang.String"/>
+  <input mandatory="true" name="jar" type="java.lang.String"/>
+  <input mandatory="true" name="role" type="java.lang.String"/>
+  <input mandatory="true" name="handler" type="java.lang.String"/>
+  <input name="payload" type="java.lang.String"/>
+  <input name="clientContext" type="java.lang.String"/>
+  <input name="invocationType" type="java.lang.String"/>
+  <input name="logType" type="java.lang.String"/>
+  <input defaultValue="" name="sdkRequestTimeout" type="java.lang.Integer"/>
+  <output name="statusCode" type="java.lang.Integer"/>
+  <output name="content" type="java.lang.String"/>
+  <output name="executedVersion" type="java.lang.String"/>
+  <output name="functionError" type="java.lang.String"/>
+  <output name="logResult" type="java.lang.String"/>
+  <page id="connection">
+    <widget xsi:type="definition:Text" id="region" inputName="region"/>
+    <widget xsi:type="definition:Text" id="accessKeyId" inputName="accessKeyId"/>
+    <widget xsi:type="definition:Text" id="secretAccessKey" inputName="secretAccessKey"/>
+    <widget xsi:type="definition:Text" id="sdkClientExecutionTimeout" inputName="sdkClientExecutionTimeout"/>
+  </page>
+  <page id="request">
+    <widget xsi:type="definition:Text" id="functionName" inputName="functionName"/>
+    <widget xsi:type="definition:Text" id="jar" inputName="jar"/>
+    <widget xsi:type="definition:Text" id="role" inputName="role"/>
+    <widget xsi:type="definition:Text" id="handler" inputName="handler"/>
+    <widget xsi:type="definition:Text" id="payload" inputName="payload"/>
+    <widget xsi:type="definition:Text" id="clientContext" inputName="clientContext"/>
+    <widget xsi:type="definition:Text" id="invocationType" inputName="invocationType"/>
+    <widget xsi:type="definition:Text" id="logType" inputName="logType"/>
+    <widget xsi:type="definition:Text" id="sdkRequestTimeout" inputName="sdkRequestTimeout"/>
+  </page>
+</definition:ConnectorDefinition>
