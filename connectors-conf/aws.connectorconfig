@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connectorconfiguration:ConnectorConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:parameter="http://www.bonitasoft.org/ns/studio/parameter" definitionId="aws-lambda" version="1.0.0" name="aws" modelVersion="7.6.0-002">
+  <parameters key="region">
+    <expression xsi:type="expression:Expression" name="aws_region" content="aws_region" type="TYPE_PARAMETER" returnTypeFixed="true">
+      <referencedElements xsi:type="parameter:Parameter" name="aws_region" typeClassname="java.lang.String"/>
+    </expression>
+  </parameters>
+  <parameters key="payload">
+    <expression xsi:type="expression:Expression" name="build_aws_payload()" content="import groovy.json.JsonSlurper&#xD;&#xA;import groovy.json.JsonOutput;&#xD;&#xA;&#xD;&#xA;def payload = new JsonSlurper().parseText(aws_payload);&#xD;&#xA;&#xD;&#xA;/*&#xD;&#xA;&#xD;&#xA;return JsonOutput.toJson([&#xD;&#xA;&#x9;callbackId: callbackId,&#xD;&#xA;&#x9;callbackUrl: aws_callbackUrl,&#xD;&#xA;&#x9;payload: (payload != null ? payload : &quot;null&quot;)&#xD;&#xA;]);&#xD;&#xA;&#xD;&#xA;*/&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;return JsonOutput.toJson([&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;payload: (payload != null ? payload : &quot;null&quot;)&#xD;&#xA;]);" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+      <referencedElements xsi:type="parameter:Parameter" name="aws_payload" typeClassname="java.lang.String"/>
+    </expression>
+  </parameters>
+  <parameters key="accessKeyId">
+    <expression xsi:type="expression:Expression" name="aws_accessKeyId" content="aws_accessKeyId" type="TYPE_PARAMETER" returnTypeFixed="true">
+      <referencedElements xsi:type="parameter:Parameter" name="aws_accessKeyId" typeClassname="java.lang.String"/>
+    </expression>
+  </parameters>
+  <parameters key="secretAccessKey">
+    <expression xsi:type="expression:Expression" name="aws_secretAccessKey" content="aws_secretAccessKey" type="TYPE_PARAMETER" returnTypeFixed="true">
+      <referencedElements xsi:type="parameter:Parameter" name="aws_secretAccessKey" typeClassname="java.lang.String"/>
+    </expression>
+  </parameters>
+  <parameters key="functionName">
+    <expression xsi:type="expression:Expression" name="aws_functionName" content="aws_functionName" type="TYPE_PARAMETER" returnTypeFixed="true">
+      <referencedElements xsi:type="parameter:Parameter" name="aws_functionName" typeClassname="java.lang.String"/>
+    </expression>
+  </parameters>
+  <parameters key="clientContext">
+    <expression xsi:type="expression:Expression" name="aws_clientContext" content="aws_clientContext" type="TYPE_PARAMETER" returnTypeFixed="true">
+      <referencedElements xsi:type="parameter:Parameter" name="aws_clientContext" typeClassname="java.lang.String"/>
+    </expression>
+  </parameters>
+  <parameters key="invocationType">
+    <expression xsi:type="expression:Expression" name="aws_invocationType" content="aws_invocationType" type="TYPE_PARAMETER" returnTypeFixed="true">
+      <referencedElements xsi:type="parameter:Parameter" name="aws_invocationType" typeClassname="java.lang.String"/>
+    </expression>
+  </parameters>
+  <parameters key="logType">
+    <expression xsi:type="expression:Expression" name="aws_logType" content="aws_logType" type="TYPE_PARAMETER" returnTypeFixed="true">
+      <referencedElements xsi:type="parameter:Parameter" name="aws_logType" typeClassname="java.lang.String"/>
+    </expression>
+  </parameters>
+  <parameters key="qualifier">
+    <expression xsi:type="expression:Expression" name="aws_qualifier" content="aws_qualifier" type="TYPE_PARAMETER" returnTypeFixed="true">
+      <referencedElements xsi:type="parameter:Parameter" name="aws_qualifier" typeClassname="java.lang.String"/>
+    </expression>
+  </parameters>
+  <parameters key="sdkClientExecutionTimeout">
+    <expression xsi:type="expression:Expression" name="aws_sdkClientExecutionTimeout" content="aws_sdkClientExecutionTimeout" type="TYPE_PARAMETER" returnType="java.lang.Integer" returnTypeFixed="true">
+      <referencedElements xsi:type="parameter:Parameter" name="aws_sdkClientExecutionTimeout" typeClassname="java.lang.Integer"/>
+    </expression>
+  </parameters>
+  <parameters key="sdkRequestTimeout">
+    <expression xsi:type="expression:Expression" name="aws_sdkRequestTimeout" content="aws_sdkRequestTimeout" type="TYPE_PARAMETER" returnType="java.lang.Integer" returnTypeFixed="true">
+      <referencedElements xsi:type="parameter:Parameter" name="aws_sdkRequestTimeout" typeClassname="java.lang.Integer"/>
+    </expression>
+  </parameters>
+</connectorconfiguration:ConnectorConfiguration>
